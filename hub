@@ -5,7 +5,7 @@ url = "https://finance.yahoo.co.jp/"  # 解析したいWebサイトのURLを記�
 html = requests.get(url)
 soup = BeautifulSoup(html.text, "html.parser")
 
-results = soup.select('._1IdtoV3i._3d5KCRuM li._2ljd8LLu')
+results = soup.select('div._1IdtoV3i._3d5KCRuM div._15DHOdsn li._2ljd8LLu[title]')
 for result in results:
     title = result.get('title')
     print(title)
